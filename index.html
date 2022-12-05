@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Marca Truko</title>
+  </head>
+  <body>
+    <header>
+      <i id="logo" class="ph-spade icon ph-2x" alt="Logo da Marca Truko"></i>
+      <h1>Marca Truko</h1>
+      <button
+        onclick="resetData()"
+        class="ph-arrow-clockwise ph-2x button rotateAnimation changeColorAnimation"
+        alt="Botão de reset"
+      ></button>
+    </header>
+    <main>
+      <div class="container lineRight">
+        <div>
+          <h2>NÓS</h2>
+          <p id="firstTeamWinCount" class="center winMarker">0</p>
+        </div>
+        <p id="firstTeamScore" class="scoreMarker">0</p>
+        <div class="buttons">
+          <button
+            onclick="addScore('firstTeam')"
+            class="ph-arrow-circle-up ph-7x button changeColorAnimation"
+          ></button>
+          <button
+            onclick="removeScore('firstTeam')"
+            class="ph-arrow-circle-down ph-7x button changeColorAnimation"
+          ></button>
+        </div>
+      </div>
+      <div class="container lineLeft">
+        <div>
+          <h2>ELES</h2>
+          <p id="secondTeamWinCount" class="center winMarker">0</p>
+        </div>
+        <p id="secondTeamScore" class="scoreMarker">0</p>
+        <div class="buttons">
+          <button
+            onclick="addScore('secondTeam')"
+            class="ph-arrow-circle-up ph-7x button changeColorAnimation"
+          ></button>
+          <button
+            onclick="removeScore('secondTeam')"
+            class="ph-arrow-circle-down ph-7x button changeColorAnimation"
+          ></button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./main.js"></script>
+</html>
