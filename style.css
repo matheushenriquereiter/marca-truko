@@ -92,13 +92,24 @@ h2 {
   transition: all 0.1s;
 }
 
-.changeColorAnimation:active {
+.colorAnimation:active {
   color: #ff4444;
+}
+
+.scaleAnimation:active {
   scale: 1.1;
-  border: none;
 }
 
 .rotateAnimation:active {
   transform: rotate(45deg);
   scale: 1.1;
+}
+
+footer {
+  height: 74px;
+  background: #222;
+  border-top: 2px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -2,18 +2,31 @@ const firstTeamWins = document.getElementById("firstTeamWinCount");
 const firstTeamScore = document.getElementById("firstTeamScore");
 const secondTeamWins = document.getElementById("secondTeamWinCount");
 const secondTeamScore = document.getElementById("secondTeamScore");
+const trucoMarker = document.getElementById("trucoMarker");
 
 let firstTeam = 0;
 let secondTeam = 0;
+let trucoValue = 1;
 
 function addScore(team) {
   if (team === "firstTeam") {
-    firstTeam++;
+    firstTeam += trucoValue;
+    if (
+      Math.floor(firstTeam / 12) > Math.floor((firstTeam - trucoValue) / 12)
+    ) {
+      resetScore();
+    }
     if (firstTeam % 12 === 0) resetScore();
   } else if (team === "secondTeam") {
-    secondTeam++;
+    secondTeam += trucoValue;
+    if (
+      Math.floor(secondTeam / 12) > Math.floor((secondTeam - trucoValue) / 12)
+    ) {
+      resetScore();
+    }
     if (secondTeam % 12 === 0) resetScore();
   }
+  resetTruco();
   updateData();
 }
 
@@ -41,5 +54,26 @@ function updateData() {
 function resetData() {
   firstTeam = 0;
   secondTeam = 0;
+  trucoValue = 1;
+  resetTruco();
   updateData();
+}
+
+function addTruco() {
+  if (trucoValue === 1) {
+    trucoValue = 3;
+    trucoMarker.classList.remove("ph-club");
+    trucoMarker.innerHTML = trucoValue;
+  } else if (trucoValue < 12) {
+    trucoValue += 3;
+    trucoMarker.innerHTML = trucoValue;
+  } else if (trucoValue === 12) {
+    resetTruco();
+  }
+}
+
+function resetTruco() {
+  trucoValue = 1;
+  trucoMarker.classList.add("ph-club");
+  trucoMarker.innerHTML = "";
 }

@@ -22,7 +22,7 @@
       <button
         type="button"
         onclick="resetData()"
-        class="ph-arrow-clockwise ph-2x button rotateAnimation changeColorAnimation"
+        class="ph-arrow-clockwise ph-2x button rotateAnimation colorAnimation scaleAnimation"
         alt="Botão de reset"
       ></button>
     </header>
@@ -37,12 +37,12 @@
           <button
             type="button"
             onclick="addScore('firstTeam')"
-            class="ph-arrow-circle-up ph-7x button changeColorAnimation"
+            class="ph-arrow-circle-up ph-7x button colorAnimation scaleAnimation"
           ></button>
           <button
             type="button"
             onclick="removeScore('firstTeam')"
-            class="ph-arrow-circle-down ph-7x button changeColorAnimation"
+            class="ph-arrow-circle-down ph-7x button colorAnimation scaleAnimation"
           ></button>
         </div>
       </div>
@@ -56,16 +56,24 @@
           <button
             type="button"
             onclick="addScore('secondTeam')"
-            class="ph-arrow-circle-up ph-7x button changeColorAnimation"
+            class="ph-arrow-circle-up ph-7x button colorAnimation scaleAnimation"
           ></button>
           <button
             type="button"
             onclick="removeScore('secondTeam')"
-            class="ph-arrow-circle-down ph-7x button changeColorAnimation"
+            class="ph-arrow-circle-down ph-7x button colorAnimation scaleAnimation"
           ></button>
         </div>
       </div>
     </main>
+    <footer>
+      <button
+        type="button"
+        onclick="addTruco()"
+        id="trucoMarker"
+        class="ph-club ph-3x button colorAnimation scaleAnimation"
+      ></button>
+    </footer>
   </body>
   <script src="./main.js"></script>
 </html>
