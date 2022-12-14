@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html class="h-full w-full" lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,66 +12,89 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="/dist/output.css" rel="stylesheet" />
     <title>Marca Truko</title>
   </head>
-  <body>
-    <header>
+  <body
+    class="h-full w-full flex flex-col bg-gray-200 text-gray-100 select-none"
+  >
+    <header
+      class="h-16 px-4 bg-gray-300 border-b-2 border-solid border-gray-100 flex items-center justify-between"
+    >
       <i id="logo" class="ph-spade icon ph-2x" alt="Logo da Marca Truko"></i>
-      <h1>Marca Truko</h1>
+      <h1 class="font-medium text-4xl text-red-100 font-lobster">
+        Marca Truko
+      </h1>
       <button
         type="button"
         onclick="resetData()"
-        class="ph-arrow-clockwise ph-2x button rotateAnimation colorAnimation scaleAnimation"
+        class="ph-arrow-clockwise ph-2x highlight-none active:rotate-45 active:text-red-100 active:scale-110 transition-duration"
         alt="Botão de reset"
       ></button>
     </header>
-    <main>
-      <div class="container lineRight">
+    <main class="grow">
+      <div
+        class="w-1/2 h-full flex float-left flex-col items-center justify-between font-mono border-r-2 border-solid border-gray-300"
+      >
         <div>
-          <h2>NÓS</h2>
-          <p id="firstTeamWinCount" class="center winMarker">0</p>
+          <h2 class="text-6xl font-semibold pt-8 text-shadow">NÓS</h2>
+          <p
+            id="firstTeamWinCount"
+            class="text-center text-red-100 text-4xl text-shadow"
+          >
+            0
+          </p>
         </div>
-        <p id="firstTeamScore" class="scoreMarker">0</p>
-        <div class="buttons">
+        <p id="firstTeamScore" class="text-8xl text-shadow">0</p>
+        <div class="flex flex-col items-center pb-8">
           <button
             type="button"
             onclick="addScore('firstTeam')"
-            class="ph-arrow-circle-up ph-7x button colorAnimation scaleAnimation"
+            class="ph-arrow-circle-up ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
           <button
             type="button"
             onclick="removeScore('firstTeam')"
-            class="ph-arrow-circle-down ph-7x button colorAnimation scaleAnimation"
+            class="ph-arrow-circle-down ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
         </div>
       </div>
-      <div class="container lineLeft">
+      <div
+        class="w-1/2 h-full flex float-left flex-col items-center justify-between font-mono border-l-2 border-solid border-gray-300"
+      >
         <div>
-          <h2>ELES</h2>
-          <p id="secondTeamWinCount" class="center winMarker">0</p>
+          <h2 class="text-6xl font-semibold pt-8 text-shadow">ELES</h2>
+          <p
+            id="secondTeamWinCount"
+            class="text-center text-red-100 text-4xl text-shadow"
+          >
+            0
+          </p>
         </div>
-        <p id="secondTeamScore" class="scoreMarker">0</p>
-        <div class="buttons">
+        <p id="secondTeamScore" class="text-8xl text-shadow">0</p>
+        <div class="flex flex-col items-center pb-8">
           <button
             type="button"
             onclick="addScore('secondTeam')"
-            class="ph-arrow-circle-up ph-7x button colorAnimation scaleAnimation"
+            class="ph-arrow-circle-up ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
           <button
             type="button"
             onclick="removeScore('secondTeam')"
-            class="ph-arrow-circle-down ph-7x button colorAnimation scaleAnimation"
+            class="ph-arrow-circle-down ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
         </div>
       </div>
     </main>
-    <footer>
+    <footer
+      class="h-20 bg-gray-300 border-t-2 border-solid border-gray-100 flex justify-center items-center"
+    >
       <button
         type="button"
         onclick="addTruco()"
         id="trucoMarker"
-        class="ph-club ph-3x button colorAnimation scaleAnimation"
+        class="ph-club ph-3x active:text-red-100 active:scale-110 highlight-none transition-duration"
       ></button>
     </footer>
   </body>

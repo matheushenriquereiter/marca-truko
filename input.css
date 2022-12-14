@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 0px #222;
+  }
+  .highlight-none {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .transition-duration {
+    transition: all 0.1s;
+  }
+}
