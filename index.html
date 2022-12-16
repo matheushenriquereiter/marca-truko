@@ -15,8 +15,8 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="./style.css" />
     <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
     <title>Marca Truko</title>
   </head>
   <body
@@ -102,4 +102,9 @@
     </footer>
   </body>
   <script src="./main.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+  </script>
 </html>
