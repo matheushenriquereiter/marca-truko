@@ -1,35 +1,34 @@
 <h1 align="center"> Marca Truko </h1>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=GPL-3.0&color=49AA26&labelColor=000000">
-  
 </p>
 
 <br>
 
 <p align="center">
-  <img alt="calendario da copa" src=".github/preview.jpg" width="100%">
+  <img alt="Marca Truko" src=".github/preview.jpg" width="100%">
 </p>
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - HTML e CSS
 - JavaScript
 - Git e GitHub
 - Tailwind CSS
 
-## 💻 Projeto
+## 💻 Project
 
-O Marca Truko é um projeto que marca a pontuação de suas partidas de truco.
+The Marca Truko is a project that marks the scores of your truco matches.
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença GPL-3.0.
+This project is under the GPL-3.0 license.
