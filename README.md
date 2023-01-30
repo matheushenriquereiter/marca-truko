@@ -20,9 +20,9 @@
 
 This project was developed with the following technologies:
 
-- HTML
+- HTML and CSS
 - JavaScript
-- Git e GitHub
+- Git and GitHub
 - Tailwind CSS
 
 ## 💻 Project
