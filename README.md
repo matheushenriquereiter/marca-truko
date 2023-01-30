@@ -20,7 +20,7 @@
 
 This project was developed with the following technologies:
 
-- HTML e CSS
+- HTML
 - JavaScript
 - Git e GitHub
 - Tailwind CSS
@@ -31,4 +31,4 @@ The Marca Truko is a project that marks the scores of your truco matches.
 
 ## :memo: License
 
-This project is under the GPL-3.0 license.
+This project is under the GPL-3.0 license. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
