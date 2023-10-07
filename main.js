@@ -1,8 +1,11 @@
-const firstTeamWins = document.getElementById("firstTeamWinCount");
-const firstTeamScore = document.getElementById("firstTeamScore");
-const secondTeamWins = document.getElementById("secondTeamWinCount");
-const secondTeamScore = document.getElementById("secondTeamScore");
-const trucoMarker = document.getElementById("trucoMarker");
+const getReference = selector =>
+  document.querySelector(`[data-js="${selector}"]`);
+
+const firstTeamWins = getReference("first-team-win-count");
+const firstTeamScore = getReference("first-team-score");
+const secondTeamWins = getReference("second-team-win-count");
+const secondTeamScore = getReference("second-team-score");
+const trucoMarker = getReference("truco-marker");
 
 let firstTeam = 0;
 let secondTeam = 0;

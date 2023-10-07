@@ -51,13 +51,13 @@
             value="NÓS"
           />
           <p
-            id="firstTeamWinCount"
+            data-js="first-team-win-count"
             class="text-center text-red-100 text-4xl text-shadow"
           >
             0
           </p>
         </div>
-        <p id="firstTeamScore" class="text-8xl text-shadow">0</p>
+        <p data-js="first-team-score" class="text-8xl text-shadow">0</p>
         <div class="flex flex-col items-center pb-8">
           <button
             type="button"
@@ -83,13 +83,13 @@
             value="ELES"
           />
           <p
-            id="secondTeamWinCount"
+            data-js="second-team-win-count"
             class="text-center text-red-100 text-4xl text-shadow"
           >
             0
           </p>
         </div>
-        <p id="secondTeamScore" class="text-8xl text-shadow">0</p>
+        <p data-js="second-team-score" class="text-8xl text-shadow">0</p>
         <div class="flex flex-col items-center pb-8">
           <button
             type="button"
@@ -110,11 +110,12 @@
       <button
         type="button"
         onclick="addTruco()"
-        id="trucoMarker"
+        data-js="truco-marker"
         class="ph-club ph-3x active:text-red-100 active:scale-110 highlight-none transition-duration"
       ></button>
     </footer>
   </body>
+
   <script src="./main.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
