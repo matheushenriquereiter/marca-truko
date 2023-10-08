@@ -1,82 +1,122 @@
 const getReference = selector =>
   document.querySelector(`[data-js="${selector}"]`);
 
-const firstTeamWins = getReference("first-team-win-count");
-const firstTeamScore = getReference("first-team-score");
-const secondTeamWins = getReference("second-team-win-count");
-const secondTeamScore = getReference("second-team-score");
-const trucoMarker = getReference("truco-marker");
+const firstTeamWinsContainer = getReference("first-team-wins");
+const firstTeamScoreContainer = getReference("first-team-score");
+const secondTeamWinsContainer = getReference("second-team-wins");
+const secondTeamScoreContainer = getReference("second-team-score");
 
-let firstTeam = 0;
-let secondTeam = 0;
+const trucoButton = getReference("truco-button");
+const resetButton = getReference("reset-button");
+
+const firstTeamAddScoreButton = getReference("first-team-add-score-button");
+const firstTeamRemoveScoreButton = getReference(
+  "first-team-remove-score-button"
+);
+const secondTeamAddScoreButton = getReference("second-team-add-score-button");
+const secondTeamRemoveScoreButton = getReference(
+  "second-team-remove-score-button"
+);
+
+const firstTeam = {
+  wins: 0,
+  score: 0,
+};
+const secondTeam = {
+  wins: 0,
+  score: 0,
+};
+
 let trucoValue = 1;
 
-function addScore(team) {
-  if (team === "firstTeam") {
-    firstTeam += trucoValue;
-    if (
-      Math.floor(firstTeam / 12) > Math.floor((firstTeam - trucoValue) / 12)
-    ) {
-      resetScore();
-    }
-    if (firstTeam % 12 === 0) resetScore();
-  } else if (team === "secondTeam") {
-    secondTeam += trucoValue;
-    if (
-      Math.floor(secondTeam / 12) > Math.floor((secondTeam - trucoValue) / 12)
-    ) {
-      resetScore();
-    }
-    if (secondTeam % 12 === 0) resetScore();
-  }
-  resetTruco();
-  updateData();
-}
+const updateData = () => {
+  firstTeamScoreContainer.innerHTML = firstTeam.score;
+  firstTeamWinsContainer.innerHTML = firstTeam.wins;
+  secondTeamScoreContainer.innerHTML = secondTeam.score;
+  secondTeamWinsContainer.innerHTML = secondTeam.wins;
+};
 
-function removeScore(team) {
-  if (team === "firstTeam" && firstTeam > 0) {
-    firstTeam--;
-  } else if (team === "secondTeam" && secondTeam > 0) {
-    secondTeam--;
-  }
-  updateData();
-}
+const resetWins = () => {
+  firstTeam.wins = 0;
+  secondTeam.wins = 0;
+};
 
-function resetScore() {
-  firstTeam -= firstTeam % 12;
-  secondTeam -= secondTeam % 12;
-}
+const resetScore = () => {
+  firstTeam.score = 0;
+  secondTeam.score = 0;
+};
 
-function updateData() {
-  firstTeamScore.innerHTML = firstTeam % 12;
-  firstTeamWins.innerHTML = Math.floor(firstTeam / 12);
-  secondTeamScore.innerHTML = secondTeam % 12;
-  secondTeamWins.innerHTML = Math.floor(secondTeam / 12);
-}
-
-function resetData() {
-  firstTeam = 0;
-  secondTeam = 0;
+const resetTruco = () => {
   trucoValue = 1;
+
+  trucoButton.innerHTML = "";
+  trucoButton.classList.add("ph-club");
+};
+
+const resetGame = () => {
+  resetWins();
+  resetScore();
   resetTruco();
   updateData();
-}
+};
 
-function addTruco() {
+const addScore = team => {
+  team.score += trucoValue;
+
+  if (team.score >= 12) {
+    team.wins++;
+    resetScore();
+  }
+
+  resetTruco();
+  updateData();
+};
+
+const removeScore = team => {
+  if (team.score === 0 && team.wins === 0) {
+    return;
+  }
+
+  team.score--;
+
+  if (team.score < 0) {
+    team.wins--;
+    team.score = 11;
+  }
+
+  updateData();
+};
+
+const handleTrucoValueChange = () => {
   if (trucoValue === 1) {
     trucoValue = 3;
-    trucoMarker.classList.remove("ph-club");
-    trucoMarker.innerHTML = trucoValue;
-  } else if (trucoValue < 12) {
+    trucoButton.classList.remove("ph-club");
+    trucoButton.innerHTML = trucoValue;
+
+    return;
+  }
+
+  if (trucoValue < 12) {
     trucoValue += 3;
-    trucoMarker.innerHTML = trucoValue;
-  } else if (trucoValue === 12) {
+    trucoButton.innerHTML = trucoValue;
+
+    return;
+  }
+
+  if (trucoValue === 12) {
     resetTruco();
   }
-}
+};
 
-function resetTruco() {
-  trucoValue = 1;
-  trucoMarker.classList.add("ph-club");
-  trucoMarker.innerHTML = "";
-}
+firstTeamAddScoreButton.addEventListener("click", () => addScore(firstTeam));
+secondTeamAddScoreButton.addEventListener("click", () => addScore(secondTeam));
+
+firstTeamRemoveScoreButton.addEventListener("click", () =>
+  removeScore(firstTeam)
+);
+secondTeamRemoveScoreButton.addEventListener("click", () =>
+  removeScore(secondTeam)
+);
+
+resetButton.addEventListener("click", resetGame);
+trucoButton.addEventListener("click", handleTrucoValueChange);

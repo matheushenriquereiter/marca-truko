@@ -28,16 +28,19 @@
       class="h-16 px-4 bg-gray-400 border-b-2 border-solid border-gray-100 flex items-center justify-between"
     >
       <i id="logo" class="ph-spade icon ph-2x" alt="Logo da Marca Truko"></i>
+
       <h1 class="font-medium text-4xl text-red-100 font-lobster">
         Marca Truko
       </h1>
+
       <button
         type="button"
-        onclick="resetData()"
+        data-js="reset-button"
         class="ph-arrow-clockwise ph-2x highlight-none active:rotate-45 active:text-red-100 active:scale-110 transition-duration"
         alt="Botão de reset"
       ></button>
     </header>
+
     <main class="grow bg-gray-200">
       <div
         class="w-1/2 h-full flex float-left flex-col items-center justify-between font-mono border-r-2 border-solid border-gray-400"
@@ -50,23 +53,26 @@
             placeholder="NÓS"
             value="NÓS"
           />
+
           <p
-            data-js="first-team-win-count"
+            data-js="first-team-wins"
             class="text-center text-red-100 text-4xl text-shadow"
           >
             0
           </p>
         </div>
+
         <p data-js="first-team-score" class="text-8xl text-shadow">0</p>
         <div class="flex flex-col items-center pb-8">
           <button
             type="button"
-            onclick="addScore('firstTeam')"
+            data-js="first-team-add-score-button"
             class="ph-arrow-circle-up ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
+
           <button
             type="button"
-            onclick="removeScore('firstTeam')"
+            data-js="first-team-remove-score-button"
             class="ph-arrow-circle-down ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
         </div>
@@ -82,35 +88,38 @@
             placeholder="ELES"
             value="ELES"
           />
+
           <p
-            data-js="second-team-win-count"
+            data-js="second-team-wins"
             class="text-center text-red-100 text-4xl text-shadow"
           >
             0
           </p>
         </div>
+
         <p data-js="second-team-score" class="text-8xl text-shadow">0</p>
         <div class="flex flex-col items-center pb-8">
           <button
             type="button"
-            onclick="addScore('secondTeam')"
+            data-js="second-team-add-score-button"
             class="ph-arrow-circle-up ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
+
           <button
             type="button"
-            onclick="removeScore('secondTeam')"
+            data-js="second-team-remove-score-button"
             class="ph-arrow-circle-down ph-7x active:text-red-100 active:scale-110 text-shadow highlight-none transition-duration"
           ></button>
         </div>
       </div>
     </main>
+
     <footer
       class="h-20 bg-gray-400 border-t-2 border-solid border-gray-100 flex justify-center items-center"
     >
       <button
         type="button"
-        onclick="addTruco()"
-        data-js="truco-marker"
+        data-js="truco-button"
         class="ph-club ph-3x active:text-red-100 active:scale-110 highlight-none transition-duration"
       ></button>
     </footer>
