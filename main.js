@@ -34,7 +34,49 @@ const updateData = () => {
   firstTeamWinsContainer.innerHTML = firstTeam.wins;
   secondTeamScoreContainer.innerHTML = secondTeam.score;
   secondTeamWinsContainer.innerHTML = secondTeam.wins;
+
+  localStorage.firstTeamData = `{
+    "wins": ${firstTeam.wins}, 
+    "score": ${firstTeam.score}
+  }`;
+
+  localStorage.secondTeamData = `{
+    "wins": ${secondTeam.wins}, 
+    "score": ${secondTeam.score}
+  }`;
 };
+
+const loadData = (() => {
+  if (!localStorage.firstTeamData) {
+    localStorage.firstTeamData = `{
+      "wins": 0, 
+      "score": 0
+    }`;
+  }
+
+  if (!localStorage.secondTeamData) {
+    localStorage.secondTeamData = `{
+      "wins": 0, 
+      "score": 0
+    }`;
+  }
+
+  const { wins: firstTeamWins, score: firstTeamScore } = JSON.parse(
+    localStorage.firstTeamData
+  );
+
+  firstTeam.wins = firstTeamWins;
+  firstTeam.score = firstTeamScore;
+
+  const { wins: secondTeamWins, score: secondTeamScore } = JSON.parse(
+    localStorage.secondTeamData
+  );
+
+  secondTeam.wins = secondTeamWins;
+  secondTeam.score = secondTeamScore;
+
+  updateData();
+})();
 
 const resetWins = () => {
   firstTeam.wins = 0;
