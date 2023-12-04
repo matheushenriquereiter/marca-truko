@@ -31,4 +31,4 @@ The Marca Truko is a project that marks the scores of your truco matches.
 
 ## :memo: License
 
-This project is under the GPL-3.0 license. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+This project is under the GPL-3.0 license. See the [LICENSE](LICENSE.md) file for more details.
